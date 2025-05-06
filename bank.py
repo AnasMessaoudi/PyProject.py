@@ -200,7 +200,7 @@ class system(gui.NewBank,gui.Choices):
                             messagebox.showerror("ERROR","YOU ALREADY HAVE A LOAN THAT YOU NEED TO PAY !!")
                         else:
                             self.show_op1()
-                            x=int(self.return_withdraw_amount())                           
+                            x=int(self.return_loan_amount())                           
                             self.client.loan+=x
                             data_base.update_client_loan(self.client.id,x)
                             self.client.set_salary(self.client.get_salary()*0.7)
@@ -218,7 +218,7 @@ from now on we are taking 30% from your salary to pay your debt
             self.client=BankAcc()
             self.client.current_money=self.client.salary 
             self.client.id=data_base.add_client_to_db(self.client.get_bank(),self.client.name,self.client.age,self.client.get_salary(),self.client.get_pw(),self.client.loan,self.client.duration,self.client.current_money)
-            messagebox.showinfo("IMPORTANT",f"Your id is {self.client.id}.YOU MUST REMEMBER THAT SO YOU CAN ACCESS YOUR ACCOUNT !!")
+            messagebox.showinfo("IMPORTANT",f"Your id is {self.client.id}. YOU MUST REMEMBER THAT SO YOU CAN ACCESS YOUR ACCOUNT !!")
 data_base.show_clients()
 s=system()
 s.run()

@@ -12,7 +12,6 @@ c.execute(''' CREATE TABLE IF NOT EXISTS clients(
         duration REAL,
         current_money INTEGER
           )   ''') 
-c.execute("DELETE from clients WHERE rowid=2")
 conn.commit()
 conn.close()
 #print all
